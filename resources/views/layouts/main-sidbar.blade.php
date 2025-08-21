@@ -17,7 +17,7 @@
           <img src="{{ URL::asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"> {{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -26,32 +26,42 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview ">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                اعدادت الحساب
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="./index.html" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p> الملف الشخصي</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p> تعديل الملف </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
+
+
+
+
+
+                  <a class="nav-link" href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"> <i class="far fa-circle nav-icon"></i>تسجيل خروج</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                     @csrf
+                                     </form>
+
+
+
+
               </li>
             </ul>
           </li>
@@ -59,8 +69,17 @@
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                البرنامج
                 <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                قسم الفواتير
               </p>
             </a>
           </li>
@@ -68,7 +87,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Layout Options
+                الفواتير
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">6</span>
               </p>
@@ -77,19 +96,19 @@
               <li class="nav-item">
                 <a href="pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
+                  <p>الفواتير المدفوعة </p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/layout/boxed.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
+                  <p>الفواتير المدفوعة جزئيا</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/layout/fixed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Fixed Sidebar</p>
+                  <p>الفواتير الغير مدفوعة</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -112,11 +131,20 @@
               </li>
             </ul>
           </li>
+
+           <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                قسم التقارير
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Charts
+                التقارير
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -124,13 +152,13 @@
               <li class="nav-item">
                 <a href="pages/charts/chartjs.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>ChartJS</p>
+                  <p>تقرير الفواتير</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
+                  <p>تقرير العملاء</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -258,7 +286,16 @@
               </li>
             </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
+          
+
+           <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                قسم المستخدمين
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
@@ -280,7 +317,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Mailbox
+                المستخدمين
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -288,13 +325,13 @@
               <li class="nav-item">
                 <a href="pages/mailbox/mailbox.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
+                  <p>قائمة المستخدمين</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/mailbox/compose.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
+                  <p>صلاحيات المستخدمين</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -309,7 +346,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
-                Pages
+                اعدادات النظام
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -317,13 +354,13 @@
               <li class="nav-item">
                 <a href="pages/examples/invoice.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
+                  <p>اضافة قسم</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/profile.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
+                  <p>اضافة منتج</p>
                 </a>
               </li>
               <li class="nav-item">

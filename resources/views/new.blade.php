@@ -12,13 +12,21 @@
 
 @stop
 
-@section('page')
+@section('dash')
 
 
 
 @stop
 
-@section('page2')
+@section('dash1')
+
+
+
+@stop
+
+@section('dash2')
+
+
 
 
 @stop
