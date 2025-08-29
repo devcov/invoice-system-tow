@@ -12,7 +12,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="pb-3 mt-3 mb-3 user-panel d-flex">
         <div class="image">
           <img src="{{ URL::asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
@@ -93,6 +93,15 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                <a href="{{ route('invoices.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>قائمة الفواتير  </p>
+                </a>
+              </li>
+
+
               <li class="nav-item">
                 <a href="pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -286,7 +295,7 @@
               </li>
             </ul>
           </li>
-          
+
 
            <li class="nav-item">
             <a href="pages/gallery.html" class="nav-link">
@@ -352,13 +361,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
+                <a href="{{ route('sections.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>اضافة قسم</p>
+                  <p> الاقسام</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="products" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>اضافة منتج</p>
                 </a>

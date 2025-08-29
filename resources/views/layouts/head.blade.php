@@ -30,4 +30,11 @@
   <link rel="stylesheet" href="{{ URL::asset('assets/dist/css/custom.css') }}">
 
 
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
+
+
+
+
   @yield('css')

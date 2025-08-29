@@ -41,4 +41,10 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('assets/dist/js/demo.js') }}"></script>
 
+
+
+
+
+
+
 @yield('scripts')

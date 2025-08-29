@@ -1,0 +1,25 @@
+/* custom.css */
+body,
+h1, h2, h3, h4, h5, h6,
+.navbar, .sidebar, .content-wrapper,
+.brand-link, .nav-link, .btn, .card {
+    font-family: 'Cairo', sans-serif !important;
+}
+
+
+.table td, .table th {
+    max-width: 150px !important;       /* أقصى عرض لكل خلية */
+    white-space: nowrap !important;     /* منع النص من النزول لسطر ثاني */
+    overflow: hidden !important;        /* إخفاء النص الزائد */
+    text-overflow: ellipsis !important; /* يظهر ... للنص الطويل */
+}
+
+/* Tooltip عند المرور بالماوس على أي خلية */
+.table td:hover {
+    overflow: visible !important;
+    white-space: normal !important;
+    background: #f9f9f9;
+    position: relative;
+    z-index: 1;
+}
+
